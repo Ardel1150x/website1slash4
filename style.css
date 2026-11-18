@@ -1,0 +1,747 @@
+
+/* =========================
+   PROFESSIONAL PORTFOLIO
+   Gold & Black Theme
+   Support: Profile 1, 2, 3
+========================= */
+
+/* Color and Typography */
+:root {
+    --primary: #171717;
+    --secondary: #8B6B23;
+    --accent: #D4AF37;
+    --background: #F8F6F0;
+    --white: #FFFFFF;
+    --text: #292929;
+    --muted: #77716A;
+
+    /* Typography */
+    --font-normal: 16px;
+    --font-subheading: 20px;
+    --font-caption: 12px;
+    --font-large: 36px;
+
+    --radius: 14px;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-normal);
+    line-height: 1.7;
+    background: var(--background);
+    color: var(--text);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        #35312A
+    );
+
+    color: var(--white);
+    text-align: center;
+    padding: 55px 20px;
+    border-bottom: 4px solid var(--accent);
+}
+
+header h1 {
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-large);
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: var(--font-normal);
+    font-weight: 400;
+    color: #E8DDBB;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    background: var(--white);
+    padding: 16px 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #E8DFC8;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    margin: 0 5px;
+    padding: 5px 8px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Active navigation */
+nav a.active {
+    color: var(--secondary);
+    font-weight: 700;
+    border-bottom: 3px solid var(--accent);
+}
+
+/* =========================
+   LOGIN / REGISTER NAV
+========================= */
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+}
+
+.nav-auth-link {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-normal);
+    font-weight: 600;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-auth-link:hover {
+    color: var(--secondary);
+    border-bottom: 3px solid var(--accent);
+}
+
+/* =========================
+   USER MENU
+========================= */
+
+.user-menu {
+    position: relative;
+    margin-left: auto;
+}
+
+.user-menu-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 10px;
+    background: var(--white);
+    border: 1px solid #E8DFC8;
+    border-radius: 25px;
+    color: var(--primary);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-normal);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.user-menu-button:hover {
+    background: #F8F6F0;
+    border-color: var(--accent);
+}
+
+.user-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--secondary);
+    color: var(--white);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    font-size: 15px;
+}
+
+.user-arrow {
+    font-size: 10px;
+    color: var(--secondary);
+}
+
+/* Dropdown */
+.user-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 190px;
+    padding: 15px;
+    background: var(--white);
+    border: 1px solid #E8DFC8;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    z-index: 200;
+}
+
+.user-dropdown p {
+    padding-bottom: 12px;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-weight: 600;
+    border-bottom: 1px solid #E8DFC8;
+    overflow-wrap: anywhere;
+}
+
+.logout-button {
+    width: 100%;
+    padding: 9px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 7px;
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-normal);
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logout-button:hover {
+    background: var(--secondary);
+}
+
+.logout-button span {
+    margin-right: 5px;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* =========================
+   STUDENT INFORMATION
+========================= */
+
+.student-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.student-info p {
+    background: var(--white);
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: var(--radius);
+    border: 1px solid #E8DFC8;
+    box-shadow: var(--shadow);
+    line-height: 1.8;
+    transition: 0.3s;
+}
+
+.student-info p:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.student-info a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.student-info a:hover {
+    color: #B08D27;
+    text-decoration: underline;
+}
+
+/* =========================
+   INDEX LAYOUT
+========================= */
+
+.index-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.images img {
+    width: 150px;
+    height: 100px;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.images img:hover {
+    transform: scale(1.08);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    color: var(--primary);
+    text-align: center;
+    font-size: var(--font-subheading);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    background: var(--accent);
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile {
+    background: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: var(--radius);
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    border: 1px solid #E8DFC8;
+}
+
+.profile h2 {
+    color: var(--secondary);
+    font-size: var(--font-subheading);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.profile p {
+    margin: 5px 0;
+}
+
+.profile-img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--accent);
+    margin: 20px auto;
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   PORTFOLIO GRID
+========================= */
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Two school cards */
+.portfolio.two-columns {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* =========================
+   PORTFOLIO CARD
+========================= */
+
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid #E8DFC8;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.card a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 22px;
+    text-align: center;
+}
+
+.card-content h3 {
+    color: var(--primary);
+    font-size: var(--font-normal);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    background: var(--secondary);
+    color: var(--white) !important;
+    border-radius: 8px;
+    font-size: var(--font-caption);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+    font-family: "Chakra Petch", sans-serif;
+}
+
+.btn:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.click-label {
+    display: inline-block;
+    padding: 9px 17px;
+    background: var(--secondary);
+    color: var(--white);
+    border-radius: 7px;
+    font-size: var(--font-caption);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.card a:hover .click-label {
+    background: var(--primary);
+}
+
+/* =========================
+   BACK LINK
+========================= */
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: #B08D27;
+    text-decoration: underline;
+}
+
+/* =========================
+   LOGIN / REGISTER PAGE
+========================= */
+
+.auth-page {
+    max-width: 520px;
+    margin: 0 auto 50px;
+    padding: 30px;
+    background: var(--white);
+    border: 1px solid #E8DFC8;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.auth-form label {
+    display: block;
+    margin: 12px 0 5px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.auth-form input {
+    display: block;
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid #D8CFBA;
+    border-radius: 8px;
+    background: #FFFDF8;
+    color: var(--text);
+    font-family: "Chakra Petch", sans-serif;
+    font-size: var(--font-normal);
+    outline: none;
+    transition: 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+}
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.auth-buttons button {
+    min-width: 110px;
+}
+
+.btn-cancel {
+    background: #77716A;
+}
+
+.btn-cancel:hover {
+    background: var(--primary);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.auth-switch a {
+    color: var(--secondary);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+
+.auth-message {
+    min-height: 25px;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.auth-message.success {
+    color: #287A3D;
+}
+
+.auth-message.error {
+    color: #C0392B;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 55px;
+    padding: 28px 20px;
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    line-height: 1.9;
+    border-top: 4px solid var(--accent);
+}
+
+footer p {
+    font-size: var(--font-caption);
+    color: #E8DDBB;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 750px) {
+
+    header {
+        padding: 40px 15px;
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 25px auto;
+    }
+
+    /* Navigation mobile */
+    nav {
+        gap: 5px;
+        padding: 12px 8px;
+    }
+
+    nav a {
+        margin: 0 3px;
+        padding: 5px;
+        font-size: 14px;
+    }
+
+    .nav-auth {
+        margin-left: 0;
+        gap: 5px;
+    }
+
+    .nav-auth-link {
+        font-size: 14px;
+        padding: 5px;
+    }
+
+    .user-menu {
+        margin-left: 0;
+    }
+
+    .user-menu-button {
+        font-size: 14px;
+        padding: 4px 8px;
+    }
+
+    /* Index layout mobile */
+    .index-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .student-info {
+        width: 100%;
+    }
+
+    .student-info p {
+        padding: 18px;
+    }
+
+    .images {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .images img {
+        width: 100px;
+        height: 80px;
+    }
+
+    /* Portfolio mobile */
+    .portfolio,
+    .portfolio.two-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .profile {
+        padding: 20px;
+    }
+
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .card img {
+        height: 240px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .auth-page {
+        padding: 20px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    nav {
+        gap: 3px;
+    }
+
+    nav a {
+        font-size: 12px;
+        margin: 0 2px;
+        padding: 4px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .student-info p {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .auth-page {
+        padding: 15px;
+    }
+
+    .auth-buttons {
+        flex-direction: column;
+    }
+
+    .auth-buttons button {
+        width: 100%;
+    }
+}

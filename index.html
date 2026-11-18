@@ -1,0 +1,603 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Portfolio | หน้าหลัก</title>
+
+    <!-- Google Fonts: Chakra Petch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>STUDENT PORTFOLIO</h1>
+        <p>เว็บไซต์รวบรวมข้อมูลและผลงานนักศึกษา</p>
+    </header>
+
+    <!-- เมนูหลัก -->
+    <nav>
+        <a href="index.html" class="active" id="homeLink">หน้าหลัก</a>
+        <a href="portfolio-1.html">Profile 1</a>
+        <a href="portfolio-2.html">Profile 2</a>
+        <a href="portfolio-3.html">Profile 3</a>
+
+        <!-- เมนู Login / Register -->
+        <div class="nav-auth" id="guestMenu">
+            <button type="button" class="nav-auth-link"
+                onclick="showAuthPage('login')">
+                Login
+            </button>
+
+            <button type="button" class="nav-auth-link"
+                onclick="showAuthPage('register')">
+                Register
+            </button>
+        </div>
+
+        <!-- เมนูผู้ใช้หลัง Login -->
+        <div class="user-menu" id="userMenu" hidden>
+
+            <button type="button" class="user-menu-button"
+                onclick="toggleUserMenu()">
+
+                <span class="user-avatar">👤</span>
+                <span id="navUsername">Username</span>
+                <span class="user-arrow">▼</span>
+            </button>
+
+            <div class="user-dropdown" id="userDropdown" hidden>
+                <p id="dropdownFullname"></p>
+
+                <button type="button" class="logout-button"
+                    onclick="logout()">
+                    <span>↪</span> Log out
+                </button>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="container">
+
+        <!-- =========================
+             หน้าหลัก
+        ========================== -->
+        <div id="homePage">
+
+            <h2 class="section-title">ข้อมูลนักศึกษา</h2>
+
+            <div class="index-container">
+
+                <div class="student-info">
+
+                    <!-- นักศึกษาคนที่ 1 -->
+                    <p>
+                        <a href="portfolio-1.html">
+                            นายภูริภัทร เอี่ยมฉลวย
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090077
+                        <br>
+                        เลขที่: 14
+                        <br><br>
+                        <a href="portfolio-1.html" class="btn">
+                            เข้าชม Profile 1
+                        </a>
+                    </p>
+
+                    <!-- นักศึกษาคนที่ 2 -->
+                    <p>
+                        <a href="portfolio-2.html">
+                            นายปัณณวัฒน์ พรมทองคำ
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090078
+                        <br>
+                        เลขที่: 15
+                        <br><br>
+                        <a href="portfolio-2.html" class="btn">
+                            เข้าชม Profile 2
+                        </a>
+                    </p>
+
+                    <!-- นักศึกษาคนที่ 3 -->
+                    <p>
+                        <a href="portfolio-3.html">
+                            นายอัครวินท์ เชียรตะกูล
+                        </a>
+                        <br>
+                        รหัสนักศึกษา: 69319090070
+                        <br>
+                        เลขที่: 7
+                        <br><br>
+                        <a href="portfolio-3.html" class="btn">
+                            เข้าชม Profile 3
+                        </a>
+                    </p>
+
+                </div>
+
+                <div class="images">
+
+                    <a href="https://www.youtube.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img
+                            src="https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg"
+                            alt="YouTube">
+                    </a>
+
+                    <a href="https://www.google.com/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <img
+                            src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                            alt="Google">
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =========================
+             หน้า Login
+        ========================== -->
+        <section id="loginPage" class="auth-page" hidden>
+
+            <h2 class="section-title">Login เข้าสู่ระบบ</h2>
+
+            <form id="loginForm" class="auth-form">
+
+                <label for="loginUsername">Username</label>
+                <input
+                    type="text"
+                    id="loginUsername"
+                    placeholder="กรอก Username"
+                    autocomplete="username"
+                    required>
+
+                <label for="loginPassword">Password</label>
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="กรอก Password"
+                    autocomplete="current-password"
+                    required>
+
+                <div class="auth-buttons">
+                    <button type="submit" class="btn">
+                        เข้าสู่ระบบ
+                    </button>
+
+                    <button type="button" class="btn btn-cancel"
+                        onclick="showHome()">
+                        ยกเลิก
+                    </button>
+                </div>
+
+                <p class="auth-switch">
+                    ยังไม่มีบัญชี?
+                    <a href="#" onclick="showAuthPage('register'); return false;">
+                        สมัครสมาชิก
+                    </a>
+                </p>
+
+            </form>
+
+            <p id="loginMessage" class="auth-message"
+                role="status" aria-live="polite"></p>
+
+        </section>
+
+        <!-- =========================
+             หน้า Register
+        ========================== -->
+        <section id="registerPage" class="auth-page" hidden>
+
+            <h2 class="section-title">Register สมัครสมาชิก</h2>
+
+            <form id="registerForm" class="auth-form">
+
+                <label for="registerUsername">Username</label>
+                <input
+                    type="text"
+                    id="registerUsername"
+                    placeholder="ตั้งชื่อผู้ใช้งาน"
+                    minlength="3"
+                    maxlength="30"
+                    autocomplete="username"
+                    required>
+
+                <label for="registerPassword">Password</label>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="ตั้งรหัสผ่านอย่างน้อย 8 ตัวอักษร"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required>
+
+                <label for="registerFullname">ชื่อ-สกุล</label>
+                <input
+                    type="text"
+                    id="registerFullname"
+                    placeholder="กรอกชื่อและนามสกุล"
+                    autocomplete="name"
+                    required>
+
+                <label for="registerEmail">Email</label>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="example@email.com"
+                    autocomplete="email"
+                    required>
+
+                <label for="registerPhone">เบอร์โทรศัพท์</label>
+                <input
+                    type="tel"
+                    id="registerPhone"
+                    placeholder="กรอกเบอร์โทรศัพท์"
+                    pattern="[0-9]{9,10}"
+                    maxlength="10"
+                    inputmode="numeric"
+                    autocomplete="tel"
+                    required>
+
+                <div class="auth-buttons">
+                    <button type="submit" class="btn">
+                        ยืนยัน
+                    </button>
+
+                    <button type="button" class="btn btn-cancel"
+                        onclick="showHome()">
+                        ยกเลิก
+                    </button>
+                </div>
+
+                <p class="auth-switch">
+                    มีบัญชีอยู่แล้ว?
+                    <a href="#" onclick="showAuthPage('login'); return false;">
+                        Login
+                    </a>
+                </p>
+
+            </form>
+
+            <p id="registerMessage" class="auth-message"
+                role="status" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>เว็บไซต์รวบรวมข้อมูลและผลงานนักศึกษา</p>
+        <p>Student Portfolio Website</p>
+    </footer>
+
+    <!-- =========================
+         LOGIN / REGISTER SCRIPT
+    ========================== -->
+    <script>
+
+        const STORAGE_KEY = "studentPortfolioUsers";
+        const SESSION_KEY = "studentPortfolioLoggedIn";
+
+        // อ่านข้อมูลสมาชิก
+        function getUsers() {
+            try {
+                return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            } catch (error) {
+                return [];
+            }
+        }
+
+        // บันทึกข้อมูลสมาชิก
+        function saveUsers(users) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(users));
+        }
+
+        // สร้าง Salt แบบสุ่ม
+        function createSalt() {
+            const bytes = crypto.getRandomValues(new Uint8Array(16));
+
+            return Array.from(bytes)
+                .map(byte => byte.toString(16).padStart(2, "0"))
+                .join("");
+        }
+
+        // Hash Password ด้วย SHA-256
+        async function hashPassword(password, salt) {
+            const data = new TextEncoder().encode(salt + password);
+            const hash = await crypto.subtle.digest("SHA-256", data);
+
+            return Array.from(new Uint8Array(hash))
+                .map(byte => byte.toString(16).padStart(2, "0"))
+                .join("");
+        }
+
+        // ซ่อนทุกหน้าแล้วแสดงหน้าที่เลือก
+        function hideAllPages() {
+            document.getElementById("homePage").hidden = true;
+            document.getElementById("loginPage").hidden = true;
+            document.getElementById("registerPage").hidden = true;
+        }
+
+        // แสดงหน้าหลัก
+        function showHome() {
+            hideAllPages();
+
+            document.getElementById("homePage").hidden = false;
+
+            document.getElementById("homeLink").classList.add("active");
+
+            document.getElementById("loginForm").reset();
+            document.getElementById("registerForm").reset();
+
+            clearMessages();
+            closeUserMenu();
+        }
+
+        // เปิดหน้า Login หรือ Register
+        function showAuthPage(type) {
+            hideAllPages();
+
+            document.getElementById("homeLink").classList.remove("active");
+
+            if (type === "login") {
+                document.getElementById("loginPage").hidden = false;
+                document.getElementById("loginUsername").focus();
+            }
+
+            if (type === "register") {
+                document.getElementById("registerPage").hidden = false;
+                document.getElementById("registerUsername").focus();
+            }
+
+            clearMessages();
+            closeUserMenu();
+        }
+
+        // ล้างข้อความแจ้งเตือน
+        function clearMessages() {
+            document.getElementById("loginMessage").textContent = "";
+            document.getElementById("registerMessage").textContent = "";
+
+            document.getElementById("loginMessage").className = "auth-message";
+            document.getElementById("registerMessage").className = "auth-message";
+        }
+
+        // แสดงข้อความแจ้งเตือน
+        function showMessage(id, message, type) {
+            const element = document.getElementById(id);
+
+            element.textContent = message;
+            element.className = "auth-message " + type;
+        }
+
+        // สมัครสมาชิก
+        document.getElementById("registerForm").addEventListener(
+            "submit", async function(event) {
+
+                event.preventDefault();
+
+                const username = document.getElementById(
+                    "registerUsername"
+                ).value.trim();
+
+                const password = document.getElementById(
+                    "registerPassword"
+                ).value;
+
+                const fullname = document.getElementById(
+                    "registerFullname"
+                ).value.trim();
+
+                const email = document.getElementById(
+                    "registerEmail"
+                ).value.trim();
+
+                const phone = document.getElementById(
+                    "registerPhone"
+                ).value.trim();
+
+                if (password.length < 8) {
+                    showMessage(
+                        "registerMessage",
+                        "Password ต้องมีอย่างน้อย 8 ตัวอักษร",
+                        "error"
+                    );
+                    return;
+                }
+
+                const users = getUsers();
+
+                const existingUser = users.some(user =>
+                    user.username.toLowerCase() === username.toLowerCase()
+                );
+
+                if (existingUser) {
+                    showMessage(
+                        "registerMessage",
+                        "Username นี้ถูกใช้งานแล้ว",
+                        "error"
+                    );
+                    return;
+                }
+
+                const salt = createSalt();
+                const passwordHash = await hashPassword(password, salt);
+
+                users.push({
+                    username: username,
+                    passwordHash: passwordHash,
+                    salt: salt,
+                    fullname: fullname,
+                    email: email,
+                    phone: phone
+                });
+
+                try {
+                    saveUsers(users);
+
+                    document.getElementById("registerForm").reset();
+
+                    showAuthPage("login");
+
+                    document.getElementById("loginUsername").value = username;
+
+                    showMessage(
+                        "loginMessage",
+                        "สมัครสมาชิกสำเร็จ กรุณาเข้าสู่ระบบ",
+                        "success"
+                    );
+
+                } catch (error) {
+                    showMessage(
+                        "registerMessage",
+                        "ไม่สามารถบันทึกข้อมูลได้",
+                        "error"
+                    );
+                }
+            }
+        );
+
+        // Login
+        document.getElementById("loginForm").addEventListener(
+            "submit", async function(event) {
+
+                event.preventDefault();
+
+                const username = document.getElementById(
+                    "loginUsername"
+                ).value.trim();
+
+                const password = document.getElementById(
+                    "loginPassword"
+                ).value;
+
+                const users = getUsers();
+
+                const user = users.find(item =>
+                    item.username.toLowerCase() === username.toLowerCase()
+                );
+
+                if (!user) {
+                    showMessage(
+                        "loginMessage",
+                        "ไม่พบ Username นี้ กรุณาสมัครสมาชิกก่อน",
+                        "error"
+                    );
+                    return;
+                }
+
+                const passwordHash = await hashPassword(
+                    password,
+                    user.salt
+                );
+
+                if (passwordHash !== user.passwordHash) {
+                    showMessage(
+                        "loginMessage",
+                        "Password ไม่ถูกต้อง กรุณาลองใหม่",
+                        "error"
+                    );
+                    return;
+                }
+
+                // บันทึกสถานะ Login ใน session
+                sessionStorage.setItem(SESSION_KEY, user.username);
+
+                // แสดงข้อมูลผู้ใช้บนเมนู
+                updateUserMenu(user);
+
+                // กลับไปหน้าหลัก
+                document.getElementById("loginForm").reset();
+                showHome();
+
+            }
+        );
+
+        // อัปเดตเมนูผู้ใช้
+        function updateUserMenu(user) {
+            document.getElementById("guestMenu").hidden = true;
+            document.getElementById("userMenu").hidden = false;
+
+            document.getElementById("navUsername").textContent =
+                user.username;
+
+            document.getElementById("dropdownFullname").textContent =
+                user.fullname;
+        }
+
+        // ตรวจสอบสถานะ Login เมื่อเปิดหรือรีเฟรชหน้า
+        function restoreLogin() {
+            const username = sessionStorage.getItem(SESSION_KEY);
+
+            if (!username) {
+                document.getElementById("guestMenu").hidden = false;
+                document.getElementById("userMenu").hidden = true;
+                return;
+            }
+
+            const users = getUsers();
+
+            const user = users.find(item =>
+                item.username.toLowerCase() === username.toLowerCase()
+            );
+
+            if (user) {
+                updateUserMenu(user);
+            } else {
+                sessionStorage.removeItem(SESSION_KEY);
+
+                document.getElementById("guestMenu").hidden = false;
+                document.getElementById("userMenu").hidden = true;
+            }
+        }
+
+        // เปิด / ปิดเมนูผู้ใช้
+        function toggleUserMenu() {
+            const dropdown = document.getElementById("userDropdown");
+
+            dropdown.hidden = !dropdown.hidden;
+        }
+
+        // ปิดเมนูผู้ใช้
+        function closeUserMenu() {
+            document.getElementById("userDropdown").hidden = true;
+        }
+
+        // Logout
+        function logout() {
+            sessionStorage.removeItem(SESSION_KEY);
+
+            document.getElementById("guestMenu").hidden = false;
+            document.getElementById("userMenu").hidden = true;
+
+            document.getElementById("userDropdown").hidden = true;
+
+            showHome();
+
+            alert("ออกจากระบบเรียบร้อยแล้ว");
+        }
+
+        // เริ่มต้นหน้าเว็บไซต์
+        restoreLogin();
+
+    </script>
+
+</body>
+</html>

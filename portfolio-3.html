@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfolio | อัครวินท์</title>
+
+    <!-- Google Fonts: Chakra Petch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>MY PORTFOLIO</h1>
+        <p>เว็บไซต์แนะนำสถานศึกษา</p>
+    </header>
+
+    <!-- เมนูหลัก -->
+    <nav>
+        <a href="index.html">หน้าหลัก</a>
+        <a href="portfolio-1.html">Profile 1</a>
+        <a href="portfolio-2.html">Profile 2</a>
+        <a href="portfolio-3.html" class="active">Profile 3</a>
+    </nav>
+
+    <main class="container">
+
+        <a href="index.html" class="back-link">
+            ← กลับหน้าหลัก
+        </a>
+
+        <!-- ข้อมูลส่วนตัว -->
+        <section class="profile" id="profile">
+
+            <h2>ข้อมูลส่วนตัว</h2>
+
+            <img
+                src="folk3.jpg"
+                alt="รูปโปรไฟล์นายอัครวินท์"
+                class="profile-img">
+
+            <p><strong>ชื่อ-นามสกุล:</strong>
+                นายอัครวินท์ เชียรตะกูล</p>
+
+            <p><strong>รหัสนักศึกษา:</strong>
+                69319090070</p>
+
+            <p><strong>เลขที่:</strong> 7</p>
+
+        </section>
+
+        <!-- สถานศึกษาที่น่าสนใจ -->
+        <section id="portfolio">
+
+            <h2 class="section-title">
+                สถานศึกษาที่น่าสนใจ
+            </h2>
+
+            <div class="portfolio two-columns">
+
+                <!-- โรงเรียนระหานวิทยา -->
+                <div class="card">
+                    <a href="https://www.rws.ac.th/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img
+                            src="rahan.jpg"
+                            alt="โรงเรียนระหานวิทยา">
+
+                        <div class="card-content">
+                            <h3>โรงเรียนระหานวิทยา</h3>
+                            <span class="click-label">
+                                เข้าชมเว็บไซต์ ↗
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- วิทยาลัยเทคนิคนครสวรรค์ -->
+                <div class="card">
+                    <a href="https://www.nkstec.ac.th/"
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <img
+                            src="technical.jpg"
+                            alt="วิทยาลัยเทคนิคนครสวรรค์">
+
+                        <div class="card-content">
+                            <h3>วิทยาลัยเทคนิคนครสวรรค์</h3>
+                            <span class="click-label">
+                                เข้าชมเว็บไซต์ ↗
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- GOOGLE MAP -->
+        <section class="map-section">
+
+            <h2 class="section-title">
+                แผนที่วิทยาลัยเทคนิคนครสวรรค์
+            </h2>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps?q=15.69118,100.11734&output=embed"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Maps วิทยาลัยเทคนิคนครสวรรค์">
+                </iframe>
+            </div>
+
+            <div class="map-link">
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=15.69118%2C100.11734"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn">
+                    เปิด Google Maps เพื่อนำทาง ↗
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>จัดทำโดย นายอัครวินท์ เชียรตะกูล</p>
+        <p>รหัสนักศึกษา 69319090070</p>
+    </footer>
+
+</body>
+</html>
